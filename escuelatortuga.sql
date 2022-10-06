@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-10-2022 a las 00:30:41
--- Versión del servidor: 8.0.27
--- Versión de PHP: 7.4.26
+-- Servidor: 127.0.0.1:3308
+-- Tiempo de generación: 06-10-2022 a las 00:27:23
+-- Versión del servidor: 8.0.18
+-- Versión de PHP: 7.4.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,28 +30,29 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `numEmpleado` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoP` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoM` text COLLATE utf8_spanish_ci NOT NULL,
-  `numeroIn` int NOT NULL,
-  `numeroEx` int NOT NULL,
-  `calle` text COLLATE utf8_spanish_ci NOT NULL,
-  `colonia` text COLLATE utf8_spanish_ci NOT NULL,
-  `municipio` text COLLATE utf8_spanish_ci NOT NULL,
-  `estado` text COLLATE utf8_spanish_ci NOT NULL,
-  `telefono` bigint NOT NULL,
-  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `cedulaprofesional` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `numEmpleado` varchar(8) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoP` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoM` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `numeroIn` int(11) NOT NULL,
+  `numeroEx` int(11) NOT NULL,
+  `calle` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `colonia` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `municipio` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `estado` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` bigint(20) NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `cedulaprofesional` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`numEmpleado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `admin`
 --
 
 INSERT INTO `admin` (`numEmpleado`, `nombre`, `apellidoP`, `apellidoM`, `numeroIn`, `numeroEx`, `calle`, `colonia`, `municipio`, `estado`, `telefono`, `email`, `cedulaprofesional`) VALUES
-('0', 'Adrian', 'Aguilar', 'Jimenez', 0, 3, 'Juarez', 'El calvario', 'Ixtacuixtla', 'Tlaxcala', 2461544567, 'adrian@gmail.com', '6890098');
+('0', 'Adrian', 'Aguilar', 'Jimenez', 0, 3, 'Juarez', 'El calvario', 'Ixtacuixtla', 'Tlaxcala', 2461544567, 'adrian@gmail.com', '6890098'),
+('12', 'Cristian ', 'Juarez ', 'Juarez ', 3, 2, 'Allende ', 'Centro ', 'Huejo ', 'Puebla ', 2271052086, 'cristian@hotmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -60,20 +62,20 @@ INSERT INTO `admin` (`numEmpleado`, `nombre`, `apellidoP`, `apellidoM`, `numeroI
 
 DROP TABLE IF EXISTS `alumnos`;
 CREATE TABLE IF NOT EXISTS `alumnos` (
-  `matricula` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoP` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoM` text COLLATE utf8_spanish_ci NOT NULL,
-  `numeroIn` int DEFAULT NULL,
-  `numeroEx` int NOT NULL,
-  `calle` text COLLATE utf8_spanish_ci NOT NULL,
-  `colonia` text COLLATE utf8_spanish_ci NOT NULL,
-  `municipio` text COLLATE utf8_spanish_ci NOT NULL,
-  `estado` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `telefono` bigint NOT NULL,
-  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `matricula` varchar(8) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoP` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoM` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `numeroIn` int(11) DEFAULT NULL,
+  `numeroEx` int(11) NOT NULL,
+  `calle` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `colonia` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `municipio` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `estado` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` bigint(20) NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`matricula`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `alumnos`
@@ -95,31 +97,32 @@ INSERT INTO `alumnos` (`matricula`, `nombre`, `apellidoP`, `apellidoM`, `numeroI
 
 DROP TABLE IF EXISTS `docentes`;
 CREATE TABLE IF NOT EXISTS `docentes` (
-  `clave` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoP` text COLLATE utf8_spanish_ci NOT NULL,
-  `apellidoM` text COLLATE utf8_spanish_ci NOT NULL,
-  `numeroIn` int NOT NULL,
-  `numeroEx` int NOT NULL,
-  `calle` text COLLATE utf8_spanish_ci NOT NULL,
-  `colonia` text COLLATE utf8_spanish_ci NOT NULL,
-  `municipio` text COLLATE utf8_spanish_ci NOT NULL,
-  `estado` text COLLATE utf8_spanish_ci NOT NULL,
-  `telefono` bigint NOT NULL,
-  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `ultimoGradoEstudios` text COLLATE utf8_spanish_ci NOT NULL,
-  `especialidad1` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `especialidad2` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `numeroDeCedula` int NOT NULL,
+  `clave` varchar(8) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoP` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidoM` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `numeroIn` int(11) NOT NULL,
+  `numeroEx` int(11) NOT NULL,
+  `calle` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `colonia` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `municipio` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `estado` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` bigint(20) NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `ultimoGradoEstudios` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `especialidad1` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `especialidad2` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `numeroDeCedula` int(11) NOT NULL,
+  `imagen` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`clave`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `docentes`
 --
 
-INSERT INTO `docentes` (`clave`, `nombre`, `apellidoP`, `apellidoM`, `numeroIn`, `numeroEx`, `calle`, `colonia`, `municipio`, `estado`, `telefono`, `email`, `ultimoGradoEstudios`, `especialidad1`, `especialidad2`, `numeroDeCedula`) VALUES
-('ME192420', 'Norma', 'Aguilar', 'Jimenez', 0, 7, 'Reforma', 'Popocatla', 'Ixtacuixtla', 'Tlaxcala', 2461544543, 'norma@gmail.com', 'Maestria', 'Lenguas', 'Matematicas', 192999);
+INSERT INTO `docentes` (`clave`, `nombre`, `apellidoP`, `apellidoM`, `numeroIn`, `numeroEx`, `calle`, `colonia`, `municipio`, `estado`, `telefono`, `email`, `ultimoGradoEstudios`, `especialidad1`, `especialidad2`, `numeroDeCedula`, `imagen`) VALUES
+('123', 'Norma', 'Aguilar', 'Jimenez', 0, 7, 'Reforma', 'Popocatla', 'Ixtacuixtla', 'Tlaxcala', 2461544543, 'norma@gmail.com', 'Maestria', 'Lenguas', 'Matematicas', 192999, '');
 
 -- --------------------------------------------------------
 
@@ -129,12 +132,12 @@ INSERT INTO `docentes` (`clave`, `nombre`, `apellidoP`, `apellidoM`, `numeroIn`,
 
 DROP TABLE IF EXISTS `grados_grupos`;
 CREATE TABLE IF NOT EXISTS `grados_grupos` (
-  `clave` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `tutor` varchar(12) COLLATE utf8_spanish_ci NOT NULL,
+  `clave` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `tutor` varchar(12) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`clave`),
   UNIQUE KEY `clave` (`tutor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -144,14 +147,14 @@ CREATE TABLE IF NOT EXISTS `grados_grupos` (
 
 DROP TABLE IF EXISTS `materias`;
 CREATE TABLE IF NOT EXISTS `materias` (
-  `id` int NOT NULL,
-  `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `grupo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `claveDocente` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `grupo` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `claveDocente` varchar(8) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `grupo` (`grupo`),
   UNIQUE KEY `claveDocente` (`claveDocente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Restricciones para tablas volcadas
