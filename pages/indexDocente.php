@@ -108,63 +108,63 @@
                     <br />
                     
                     <label for="nombre">Ingrese el nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control"  pattern="([A-Z]{1}[a-zñáéíóú]+[\s]*)" >
+                    <input type="text" name="nombre" id="nombre" class="form-control" required=""  pattern="([A-Z]{1}[a-zñáéíóú]+[\s]*)" >
                     <br />
 
                     <label for="apaterno">Ingrese Apellido Paterno</label>
-                    <input type="text" name="apellidoP" id="apellidoP" class="form-control" >
+                    <input type="text" name="apellidoP" id="apellidoP" class="form-control"  required="" pattern="([A-Z]{1}[a-zñáéíóú]+[\s]*)" >
                     <br />
 
                     <label for="amaterno">Ingrese Apellido Materno </label>
-                    <input type="text" name="apellidoM" id="apellidoM" class="form-control" >
+                    <input type="text" name="apellidoM" id="apellidoM" class="form-control"  required="" pattern="([A-Z]{1}[a-zñáéíóú]+[\s]*)" >
                     <br />
 
                     <label for="numeroI">Ingrese numero interior</label>
-                    <input type="number" name="numeroIn" id="numeroIn" class="form-control" >
+                    <input type="number" name="numeroIn" id="numeroIn" class="form-control"  required="" >
                     <br />
                     
                     <label for="numeroE">Ingrese número exterior</label>
-                    <input type="number" name="numeroEx" id="numeroEx" class="form-control" >
+                    <input type="number" name="numeroEx" id="numeroEx" class="form-control"  required="" >
                     <br />
                     
                     <label for="calle">Ingrese la calle</label>
-                    <input type="text" name="calle" id="calle" class="form-control">
+                    <input type="text" name="calle" id="calle" class="form-control"  required="">
                     <br />
                     
                     <label for="colonia">Ingrese la colonia</label>
-                    <input type="text" name="colonia" id="colonia" class="form-control" >
+                    <input type="text" name="colonia" id="colonia" class="form-control"  required="" >
                     <br />
                     
                     <label for="municipio">Ingrese el municipio</label>
-                    <input type="text" name="municipio" id="municipio" class="form-control">
+                    <input type="text" name="municipio" id="municipio" class="form-control"  required="">
                     <br />
                     
                     <label for="estado">Ingrese el estado</label>
-                    <input type="text" name="estado" id="estado" class="form-control">
+                    <input type="text" name="estado" id="estado" class="form-control"  required="">
                     <br />
                     
                     <label for="telefono">Ingrese el teléfono</label>
-                    <input type="number" name="telefono" id="telefono" class="form-control" >
+                    <input type="number" name="telefono" id="telefono" class="form-control" required="" >
                     <br />
                     
                     <label for="correo">Ingrese correo electronico</label>
-                    <input type="email" name="email" id="email" class="form-control" >
+                    <input type="email" name="email" id="email" class="form-control"  required="">
                     <br />
                     
                     <label for="ultimogrado">Ingrese el último grado de estudios</label>
-                    <input type="text" name="ultimoGradoEstudios" id="ultimoGradoEstudios" class="form-control" >
+                    <input type="text" name="ultimoGradoEstudios" id="ultimoGradoEstudios" class="form-control"  required="" >
                     <br />
                     
                      <label for="especialidad1">Ingrese 1er especialidad</label>
-                    <input type="text" name="especialidad1" id="especialidad1" class="form-control">
+                    <input type="text" name="especialidad1" id="especialidad1" class="form-control"  required="">
                     <br />
                     
                      <label for="especialidad2">Ingrese 2da especialidad</label>
-                    <input type="text" name="especialidad2" id="especialidad2" class="form-control">
+                    <input type="text" name="especialidad2" id="especialidad2" class="form-control"  required="">
                     <br />
                     
                      <label for="cedula">Ingrese número de cedula</label>
-                    <input type="number" name="numeroDeCedula" id="numeroDeCedula" class="form-control" >
+                    <input type="number" name="numeroDeCedula" id="numeroDeCedula" class="form-control" required="" >
                     <br />
 
 
