@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela Tortuga</title>
+    <link rel="stylesheet" href="./css/primero.css">
+</head>
+<body>
+    <header class="header-main" >
+        <div id="respuesta">
+
+        </div>
+        <h1 class="header-main-h1">Escuela Tortuga</h1>
+    </header>
+    <main class="mainBody">
+        <section>
+            <form action="" class="mainBody-form" id="formulario">
+                <label  for="correo" class="mainBody-form__label__title"> INICIAR SESION</label><br><br>
+                <label  class="mainBody-form__label">Correo</label><br>
+                <input type="email" id="correo" name="correo" class="mainBody-form__input" required>
+                <label for="password"  class="mainBody-form__label">Password</label>
+                <input type="password"  id="password" name="password" class="mainBody-form__input" required><br>
+                <input type="submit" value="Entrar"  class="mainBody-form__login" onclick="captura()">
+                <!---->
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="fotter-data">David Limón Aguilar</p>
+        <p class="fotter-data">davidcjaguilar@gmail.com</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/iniciar.js"></script>
+</body>
+</html>

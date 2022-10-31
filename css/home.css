@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    
+}
+body{
+    /*background-color: #2c2c2c;*/
+    background-image: url(../img/kamehouse.jpg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a,li{
+    font-family:'Roboto', sans-serif;
+    color: #222;
+}
+
+.logo-header img{
+    width: 50px;
+}
+
+header{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+}
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+}
+.nav-menu li{
+    margin-right: 1.5rem;
+
+}
+
+.nav-menu a:hover{
+    color: rgb(255,144,0);
+}
+.nav-menu li:last-child{
+    background-color: rgb(255,144,0);
+    border: 2px solid rgb(255,144,0);
+    padding: .25rem .75rem;
+    border-radius: .2rem;
+}
+.nav-menu li:last-child:hover{
+    background: transparent;
+    border: 2px solid rgb(255,144,0);
+}
+
+picture img{
+    width: 400px;
+    padding-left: 70%;
+    padding-top: 10%;
+    animation: movimiento 2.5s linear infinite;
+}
+.burbuja{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+    left: 5%;
+
+    animation: burbujas 3s linear infinite;
+
+}
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+.burbuja:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+.burbuja:nth-child(6){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+.burbuja:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+.burbuja:nth-child(8){
+    width: 100px;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+.burbuja:nth-child(9){
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+.burbuja:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translate(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+footer{
+    background-color: #fff;
+    text-align: center;
+    height: 100px;
+    margin-top: auto;
+    padding: 20px 0;
+}
+footer li{
+    margin-top: 20px;
+}
