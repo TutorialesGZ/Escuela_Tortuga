@@ -48,6 +48,7 @@ $ses = new UserSession();
                     <th><div class="encabezdos">Estado</div></th>
                     <th><div class="encabezdos">Numero de telefono</div></th>
                     <th><div class="encabezdos">E-mail</div></th>
+                    <th><div class="encabezdos">Clave Grupo</div></th>
                     <th><div class="encabezdos">Eliminar</div></th>
                 </tr>
                </thead>
@@ -105,6 +106,24 @@ $ses = new UserSession();
                 <div class="grupo">
                     <input class="input" type="email" id="correo" required><span class="barra"></span>
                     <label for="">Correo</label>
+                </div>
+                <div class="grupo">
+                <label for="">Grupo</label>
+                <select style=" margin-top:10%; border-radius:3px; border: none; outline:none" id="claveGrupo">
+                <option value="0">Seleccione:</option>
+                   <?php
+        
+                     require_once('../scripts/listaGrupos.php');
+
+                     foreach($array as $key){
+                         echo '<option  value="'.$key['clave'].'">'.$key['descripcion'].'</option>';
+                
+                        }
+                
+                     ?>
+            
+        
+             </select>
                 </div>
         
                 <button class="boton" type="submit" onclick="captura()">Editar</button>

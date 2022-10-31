@@ -5,7 +5,7 @@ $(function() {
     $('#search').keyup(function(){
         if($('#search').val()){
             let search = $('#search').val();
-        //console.log(search);
+        console.log(search);
         $.ajax({
             url: 'http://localhost/EscuelaTortuga/scripts/buscar.php',
             type: 'POST',
@@ -29,6 +29,7 @@ $(function() {
                     <td>${alumnos.estado}</td>
                     <td>${alumnos.telefono}</td>
                     <td>${alumnos.email}</td>
+                    <td>${alumnos.claveGrupo}</td>
                     <td><button type="submit" class="delete">Eliminar</button></td>
                     </tr>
                     `
@@ -63,6 +64,7 @@ $(function() {
                     <td>${al.estado}</td>
                     <td>${al.telefono}</td>
                     <td>${al.email}</td>
+                    <td>${al.claveGrupo}</td>
                     <td><button type="submit" class="delete">Eliminar</button></td>
                     </tr>
                     `
@@ -110,6 +112,7 @@ $(document).on('click', '.edit', function(){
             $('#estado').val(datos[0].estado);
             $('#cel').val(datos[0].telefono);
             $('#correo').val(datos[0].email);
+            $('#claveGrupo').val(datos[0].claveGrupo);
         
     })
     
@@ -130,8 +133,8 @@ $(document).on('click', '.boton', function(){
             municipio:  $('#municipio').val(),
             estado:  $('#estado').val(),
             telefono:  $('#cel').val(),
-            email:  $('#correo').val()
-
+            email:  $('#correo').val(),
+            claveGrupo: $('#claveGrupo').val(),
         };
  
 

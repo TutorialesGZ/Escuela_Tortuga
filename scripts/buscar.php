@@ -1,7 +1,7 @@
 <?php
 require_once 'buscarAdmin.php';
 
-$columns = ['matricula','nombre','apellidoP','apellidoM','numeroIn','numeroEx','calle','colonia','municipio','estado','telefono','email'];
+$columns = ['matricula','nombre','apellidoP','apellidoM','numeroIn','numeroEx','calle','colonia','municipio','estado','telefono','email','claveGrupo'];
 
 $buscar = $_POST['search'];
 

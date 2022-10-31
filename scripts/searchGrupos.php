@@ -2,7 +2,7 @@
 require_once("./Grupos.php");
 $obj = new Grupos();
 
-$columns = ['clave','descripcion','tutor'];
+$columns = ['clave','descripcion'];
 
 $buscar = $_POST['search'];
 

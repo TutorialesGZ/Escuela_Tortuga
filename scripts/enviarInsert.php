@@ -12,10 +12,11 @@ $municipio = $_POST['municipio'];
 $estado = $_POST['estado'];
 $numTelefono = $_POST['cel'];
 $email = $_POST['email'];
+$claveGrupo = $_POST['claveG'];
 $obj = new IngresarHome();
 
 $resultado =  $obj->insertAlumnos($numeroControl,$nombre,$apellidoPaterno,$apellidoPaterno,
-$numeroInterior,$numeroExterior,$calle,$colonia,$municipio,$estado,$numTelefono,$email);
+$numeroInterior,$numeroExterior,$calle,$colonia,$municipio,$estado,$numTelefono,$email,$claveGrupo);
 //$resultado = $obj->insertAlumnos("1940005","Luis Angel","MArin","Coheto",0,65,"Nose","Ocotlan","ocotlan","Tlaxcala","2461715558","luis@gmail.com");
 
 if ($resultado == "true") {

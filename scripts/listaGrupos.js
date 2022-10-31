@@ -19,7 +19,6 @@ $(function() {
                     <tr dataId="${grupos.clave}">
                     <td >${grupos.clave}</td>
                     <td><a href="#" class="edit">${grupos.descripcion}</a></td>
-                    <td>${grupos.tutor}</td>
                     <td><button type="submit" class="delete">Eliminar</button></td>
                     </tr>
                     `
@@ -44,7 +43,6 @@ $(function() {
                     <tr dataId="${al.clave}">
                     <td >${al.clave}</td>
                     <td><a href="#" class="edit">${al.descripcion}</a></td>
-                    <td>${al.tutor}</td>
                     <td><button type="submit" class="delete">Eliminar</button></td>
                     </tr>
                     `
@@ -81,8 +79,7 @@ $(document).on('click', '.edit', function(){
             let datos = JSON.parse(response);
             console.log(datos[0].clave);
             $('#numeroControl').val(datos[0].clave);
-            $('#nombre').val(datos[0].descripcion);
-            $('#tutor').val(datos[0].tutor);       
+            $('#nombre').val(datos[0].descripcion);     
     })
     
 
@@ -93,8 +90,6 @@ $(document).on('click', '.boton', function(){
         const data = {
             matricula: $('#numeroControl').val(),
             nombre:  $('#nombre').val(),
-            tutor:  $('#tutor').val(),
-
         };
  
 

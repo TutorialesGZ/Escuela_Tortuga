@@ -79,6 +79,24 @@ $ses = new UserSession();
             <input type="email" id="correo" required><span class="barra"></span>
             <label for="">Correo</label>
         </div>
+        <div class="grupo">
+                <label for="">Grupos</label>
+                <select style=" margin-top:10%; border-radius:3px; border: none; outline:none" id="claveGrupo">
+                <option value="0">Seleccione:</option>
+                   <?php
+        
+                     require_once('../scripts/listaGrupos.php');
+
+                     foreach($array as $key){
+                         echo '<option  value="'.$key['clave'].'">'.$key['descripcion'].'</option>';
+                
+                        }
+                
+                     ?>
+            
+        
+             </select>
+                </div>
 
         <button  type="submit" onclick="captura()">Registrar</button>
     </div>

@@ -15,6 +15,7 @@ require_once("./userSession.php");
         private $strEstado;
         private $intCel;
         private $conexion;
+        private $cg;
 
         public function __construct(){
             $this->conexion = new Conexion();
@@ -22,7 +23,7 @@ require_once("./userSession.php");
         }
         public function insertAlumnos(string $matricula, string $nombre, 
         string $ap, string $am, int $numIn, int $numEx, string $calle, 
-        string $colonia, string $municipio,string $estado, int $cel, string $correo):bool{
+        string $colonia, string $municipio,string $estado, int $cel, string $correo, string $claveGrupo):bool{
           $this->strmatricula = $matricula;
           $this->strnombre = $nombre;
           $this->strap = $ap;
@@ -35,12 +36,13 @@ require_once("./userSession.php");
           $this->strEstado = $estado;
           $this->intCel = $cel;
           $this->strEmail = $correo;
+          $this->cg = $claveGrupo;
 
           $datos = array($this->strmatricula, $this->strnombre,$this->strap,
           $this->stram,$this->intNumIn,$this->intNumEx,$this->strCalle,
-          $this->strColonia,$this->strMunicipio,$this->strEstado,$this->intCel,$this->strEmail);
+          $this->strColonia,$this->strMunicipio,$this->strEstado,$this->intCel,$this->strEmail,$this->cg = $claveGrupo);
           
-          $sql = "INSERT INTO alumnos VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+          $sql = "INSERT INTO alumnos VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
           $insert = $this->conexion->prepare($sql);
           $reInsert = $insert->execute($datos);
 
@@ -64,7 +66,7 @@ require_once("./userSession.php");
 
         public function updateAlumnos(string $numeroControl,string $nombre, string $ap, string $am,
          int $numIn, int $numEx, string $calle, string $colonia, string $municipio,string $estado,
-          int $cel, string $correo){
+          int $cel, string $correo, string $claveGrupo){
           $this->strnombre = $nombre;
           $this->strap = $ap;
           $this->stram = $am;
@@ -76,13 +78,13 @@ require_once("./userSession.php");
           $this->strEstado = $estado;
           $this->intCel = $cel;
           $this->strEmail = $correo;
-              
+          $this->cg = $claveGrupo;
 
           $sql = "UPDATE alumnos SET nombre=?,apellidoP=?,apellidoM=?,numeroIn=?,numeroEx=?,
-          calle=?,colonia=?,municipio=?,estado=?,telefono=? ,email=? WHERE matricula=$numeroControl";
+          calle=?,colonia=?,municipio=?,estado=?,telefono=? ,email=?, claveGrupo=? WHERE matricula=$numeroControl";
           $update = $this->conexion->prepare($sql);
           $datos = array($this->strnombre,$this->strap,$this->stram,$this->intNumIn,$this->intNumEx,
-          $this->strCalle,$this->strColonia,$this->strMunicipio,$this->strEstado,$this->intCel,$this->strEmail);
+          $this->strCalle,$this->strColonia,$this->strMunicipio,$this->strEstado,$this->intCel,$this->strEmail,$this->cg = $claveGrupo);
           $resExecute = $update->execute($datos);
           
           if($resExecute){

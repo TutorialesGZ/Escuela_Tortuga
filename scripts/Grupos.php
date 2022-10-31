@@ -11,12 +11,11 @@ class Grupos{
         $this->conexion = $this->conexion->connect();
     }
 
-    public function insertarGrupos(string $clave, string $descripcion,string $tutor):bool{
+    public function insertarGrupos(string $clave, string $descripcion):bool{
         $this->strClave = $clave;
         $this->strDescripcion = $descripcion;
-        $this->strTutor = $tutor;
-         $data = array($this->strClave,$this->strDescripcion,$this->strTutor);
-         $sql = "INSERT INTO grados_grupos VALUES (?,?,?)";
+         $data = array($this->strClave,$this->strDescripcion);
+         $sql = "INSERT INTO grados_grupos VALUES (?,?)";
          $insert = $this->conexion->prepare($sql);
          $reInsert = $insert->execute($data);
          if($reInsert){
@@ -57,9 +56,9 @@ class Grupos{
         }
     }
 
-    public function updateGrupos(string $clave, string $descripcion, string $tutor):bool{
-        $sql = "UPDATE grados_grupos SET descripcion =?, tutor =? WHERE clave =?";
-        $data = array($descripcion, $tutor, $clave);
+    public function updateGrupos(string $clave, string $descripcion):bool{
+        $sql = "UPDATE grados_grupos SET descripcion =? WHERE clave =?";
+        $data = array($descripcion, $clave);
         $update = $this->conexion->prepare($sql);
         $request = $update->execute($data);
         if($request){

@@ -12,6 +12,7 @@ function captura(){
     let estado = document.getElementById("estado").value;
     let telefono = document.getElementById("cel").value;
     let correo = document.getElementById("correo").value;
+    let claveGrupo = document.getElementById("claveGrupo").value;
 
    /* alert(numeroControl);
     alert(nombre);
@@ -29,7 +30,7 @@ function captura(){
 
     //alert('Tomo variables');
     if(numeroControl != "" || nombre!= "" || apellidoPaterno != "" || apellidoMaterno != "" || numeroInterior != "" || numeroExterior != "" 
-    || calle != "" || colonia != "" || municipio!= "" || estado != "" || telefono != "" || correo != "" ){
+    || calle != "" || colonia != "" || municipio!= "" || estado != "" || telefono != "" || correo != "" || claveGrupo !=""){
         //alert('Entro al if');
        // alert('Pasa a ajax');
         $.ajax({
@@ -48,7 +49,8 @@ function captura(){
                municipio: municipio,
                estado: estado,
                cel: telefono,
-               email: correo
+               email: correo,
+               claveG: claveGrupo
             },
             success: function(responde){
                 alert(responde);

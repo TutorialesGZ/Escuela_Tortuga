@@ -2,9 +2,8 @@ function captura(){
     //alert('XDDDDD');
     let clave = document.getElementById("clave").value;
     let descripcion = document.getElementById("descripcion").value;
-    let tutor = document.getElementById("tutor").value;
 
-    if(clave != "" || descripcion != "" || tutor != ""){
+    if(clave != "" || descripcion != ""){
         $.ajax({
             url: 'http://localhost/EscuelaTortuga/scripts/isertGrupos.php',
             type: 'POST',
@@ -12,7 +11,6 @@ function captura(){
             data:{
                clave: clave,
                desc: descripcion,
-               tutor: tutor,
             },
             success: function(responde){
                 alert(responde);

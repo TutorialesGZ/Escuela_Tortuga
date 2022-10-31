@@ -12,10 +12,11 @@ $municipio = $_POST['municipio'];
 $estado = $_POST['estado'];
 $telefono = $_POST['telefono'];
 $email = $_POST['email'];
+$claveGrupo = $_POST['claveGrupo'];
 $obj = new IngresarHome();
 
 $result = $obj->updateAlumnos($matricula,$nombre,$apellidoPaterno,$apellidoMaterno,
-$numeroInterior,$numeroExterior,$calle,$colonia,$municipio,$estado,$telefono,$email);
+$numeroInterior,$numeroExterior,$calle,$colonia,$municipio,$estado,$telefono,$email,$claveGrupo);
 
 if($result == "true"){
     echo('Se a actualizado');

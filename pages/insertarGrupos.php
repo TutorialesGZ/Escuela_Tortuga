@@ -41,26 +41,6 @@ $ses = new UserSession();
             <input type="text" id="descripcion" required><span class="barra"></span>
             <label for="">Descripción</label>
         </div>
-        <div class="grupo">
-            <!--<input type="text" id="tutor" required>-->
-            <label for="">Tutor</label>
-            <select style=" margin-top:10%; border-radius:3px; border: none; outline:none" id="tutor">
-                <option value="0">Seleccione:</option>
-                   <?php
-        
-                     require_once('../scripts/listaDocentes.php');
-
-                     foreach($array as $key){
-                         echo '<option  value="'.$key['clave'].'">'.$key['nombre'].' '.$key['apellidoP'].' '. $key['apellidoM'].'</option>';
-                
-                        }
-                
-                     ?>
-            
-        
-             </select>
-            
-        </div>
 
         <button  type="submit" onclick="captura()">Registrar</button>
     </div>
