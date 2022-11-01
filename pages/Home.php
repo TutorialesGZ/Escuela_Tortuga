@@ -20,10 +20,10 @@ $ses = new UserSession();
             <ul>
                 <li><a href="http://localhost/EscuelaTortuga/pages/Home.php">Inicio</a></li>
                 <li><a href="http://localhost/EscuelaTortuga/pages/listaAlumnos.php">Estduantes</a></li>
-                <li><a href="#">Docentes</a></li>
+                <li><a href="http://localhost/EscuelaTortuga/pages/indexDocente.php">Docentes</a></li>
                 <li><a href="http://localhost/EscuelaTortuga/pages/listaGrupos.php">Grupos</a></li>
-                <li><a href="#">Materias</a></li>
-                <li><a href="#">Usuario</a></li>
+                <li><a href="http://localhost/EscuelaTortuga/CMATERIAS/">Materias</a></li>
+                <li><a href="http://localhost/EscuelaTortuga/CMATERIAS/">Usuario</a></li>
                 <li><a href="../scripts/logout.php">Salir</a></li>
                 <li><a href="#"><?php   echo ($ses->getUser());  ?></a></li>
             </ul>

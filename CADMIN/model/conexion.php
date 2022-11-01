@@ -5,7 +5,7 @@ $nombre_bd = "escuelatortuga";
 
 try {
 	$bd = new PDO (
-		'mysql:host=localhost:3308;
+		'mysql:host=localhost;
 		dbname='.$nombre_bd,
 		$usuario,
 		$contrasena,
